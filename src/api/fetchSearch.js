@@ -14,7 +14,7 @@ const fetchSearch = (searchCity) => {
 	return axios
 		.request(options)
 		.then((response) => {
-			return Promise.resolve(response.data);
+			return Promise.resolve({ searchData: response.data, loading: false });
 		})
 		.catch((error) => {
 			console.error(error);

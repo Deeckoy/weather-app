@@ -3,7 +3,7 @@ function WeatherCard({ query }) {
 
 	return (
 		<div className="weather__card relative w-96 overflow-hidden bg-white py-4 px-6 shadow-lg rounded-lg">
-			<div className="weather__card__icon absolute top-0 right-0 z-0">
+			<div className="weather__card__icon absolute top-2 right-2 z-0">
 				<img src={weather.current.condition.icon} />
 			</div>
 
@@ -16,13 +16,13 @@ function WeatherCard({ query }) {
 			<div className="weather__card__body">
 				<div className="weather__card__body__temp mb-1">
 					<span className="weather__card__body__temp__value text-4xl text-gray-700 font-bold">
-						{weather.current.temp_c} °C
+						{Math.round(weather.current.temp_c)} °C
 					</span>
 				</div>
 
 				<div className="weather__card__body__text">
 					<span className="weather__card__body__text__value text-sm text-gray-400">
-						Feels like: {weather.current.feelslike_c} °C
+						Feels like: {Math.round(weather.current.feelslike_c)} °C
 					</span>
 				</div>
 			</div>
@@ -34,7 +34,7 @@ function WeatherCard({ query }) {
 					<span className="weather__card__info__item__title text-lg text-gray-700 font-semibold mb-1">Wind</span>
 
 					<span className="weather__card__info__item__value text-sm text-gray-500">
-						Speed: {weather.current.wind_kph} km/h
+						Speed: {Math.round(weather.current.wind_kph)} km/h
 					</span>
 					<span className="weather__card__info__item__value text-sm text-gray-500">
 						Degree: {weather.current.wind_degree}°
